@@ -1,12 +1,12 @@
 {
-  "name": "Botname-MD",
+  "name": "merlin-md",
   "version": "3.0.0",
-  "description": "A WhatsApp Bot Created By YOUR NAME",
+  "description": "A WhatsApp Bot Created By Sigmalordnicks",
   "main": "index.js",
   "scripts": {
-    "start": "pm2 start index.js --deep-monitoring --attach --name Botname-MD",
-    "stop": "pm2 stop Botname-MD",
-    "restart": "pm2 restart Botne-MD"
+    "start": "pm2 start index.js --deep-monitoring --attach --name merlin-md",
+    "stop": "pm2 stop merlin-md",
+    "restart": "pm2 restart merlin-md"
   },
   "dependencies": {
     "@whiskeysockets/baileys": "6.6.0",
