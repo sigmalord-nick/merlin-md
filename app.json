@@ -1,7 +1,7 @@
 {
-  "name": "your Botname",
-  "description": "ᴊᴀᴠᴀsᴄʀɪᴘᴛ ᴡʜᴀᴛsᴀᴘᴘ ʙᴏᴛ ᴄʀᴇᴀᴛᴇᴅ ʙʏ your name ",
-  "logo": "your image url",
+  "name": "merlin-md",
+  "description": "ᴊᴀᴠᴀsᴄʀɪᴘᴛ ᴡʜᴀᴛsᴀᴘᴘ ʙᴏᴛ ᴄʀᴇᴀᴛᴇᴅ ʙʏ merlin-md ",
+  "logo": "https://files.catbox.moe/ut7n88.jpg",
   "keywords": ["bot"],
   "success_url": "/",
 
@@ -16,19 +16,19 @@
     "ALIVE_IMG": {
       "description": "paste your image url if you don't have you can use this public url.",
       "required": true,
-      "value": "your image url"
+      "value": "https://files.catbox.moe/lnum01.jpg"
     }, 
     
     "ALIVE_MSG": {
       "description": "paste your alive message hear.",
       "required": true,
-      "value": "HI DEAR IM ONLINE.!!♻️"
+      "value": "HI DEAR merlin md in ONLINE.!!♻️"
     },
     
     "PREFIX": {
       "description": "paste your bot prefix note! Don't apply null prefix.",
       "required": true,
-      "value": "."
+      "value": ","
     },
     
     "MODE": {
@@ -52,7 +52,7 @@
     "AUTO_STICKER": {
       "description": "Make it true if you want bot auto sticker.",
       "required": true,
-      "value": "false"
+      "value": "true"
     }, 
 
     "AUTO_READ_STATUS": {
@@ -70,7 +70,7 @@
     "ANTI_BAD": {
       "description": "Make it true if you want bot auto delete bad words from group example xxx porn etc.",
       "required": true,
-      "value": "false"
+      "value": "true"
     }, 
 
     "FAKE_RECORDING": {
@@ -95,7 +95,7 @@
     "BOT_NAME": {
       "description": "write hear your name.",
       "required": true,
-      "value": "✦『Botname-MD』✦"
+      "value": "✦『merlin-md』✦"
     }, 
 
     "HEART_REACT": {
