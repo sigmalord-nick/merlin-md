@@ -9,4 +9,4 @@ RUN npm install
 COPY . .
 
 # Start app
-CMD ["node", "start.js"]
+CMD ["node", "start"]
