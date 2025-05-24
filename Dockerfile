@@ -1,9 +1,12 @@
-Use this docker⬇️
-
 FROM node:lts-buster
+
+# Install dependencies
 WORKDIR /app
 COPY package*.json ./
-RUN npm install && npm install -g qrcode-terminal pm2
+RUN npm install
+
+# Copy app files
 COPY . .
-EXPOSE 3000
-CMD ["npm", "start"]
+
+# Start app
+CMD ["node", "start.js"]
