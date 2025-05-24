@@ -10,6 +10,40 @@
  <p align="center">
   <a href="#"><img src="http://readme-typing-svg.herokuapp.com?color=ff00ab&center=true&vCenter=true&multiline=false&lines=MERLIN-MD+MD+WHATSAPP+BOT+MD" alt="">
    
+
+
+## 📡 DEPLOYMENT OPTIONS
+
+<div align="center">
+  <table>
+    <tr>
+      <td>
+        <a href="https://bot-hosting.net/?aff=1097457675723341836" target="_blank">
+          <img src="https://img.shields.io/badge/BotHosting-8A2BE2?style=for-the-badge&logo=vercel&logoColor=white&labelColor=1a1a1a"/>
+        </a>
+      </td>
+      <td>
+        <a href="https://dashboard.katabump.com/auth/login#203630" target="_blank">
+          <img src="https://img.shields.io/badge/Katabump-FF5722?style=for-the-badge&logo=codeberg&logoColor=white&labelColor=1a1a1a"/>
+        </a>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <a href="https://dash.hmvhostings.com/register?ref=GKTSTyFY" target="_blank">
+          <img src="https://img.shields.io/badge/HMVHosting-00ACC1?style=for-the-badge&logo=cloudflare&logoColor=white&labelColor=1a1a1a"/>
+        </a>
+      </td>
+    </tr>
+  </table>
+</div>
+
+
+> U can use any other panel u know
+<p align="center"><img src="https://i.imgur.com/LyHic3i.gif" alt="divider"/></p>
+
+
+
 ## 𝐃𝐄𝐏𝐋𝐎𝐘 𝐒𝐄𝐓𝐔𝐏 ↕️
 
 **1. Fork This Repository**
