@@ -2,7 +2,7 @@
   "name": "merlin-md",
   "version": "3.0.0",
   "description": "A WhatsApp Bot Created By Sigmalordnicks",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
     "start": "node server.js",
     "stop": "pm2 stop merlin-md",
