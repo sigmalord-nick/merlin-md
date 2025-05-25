@@ -19,7 +19,7 @@ function convertToBool(text, fault = 'true') {
     return text === fault ? true : false;
 }
 module.exports = {
-SESSION_ID: process.env.SESSION_ID || "Merlin-MD~0r9imJJT#EIhBz8PWcmirDBMNgTZkb85GoU9le-71hdEd0pMoa5Q",
+SESSION_ID: process.env.SESSION_ID || "Merlin-MD~EuMQhDbY#U4JSJ8T8Imj7H5XlTEbnr6ruI_Hfm9yf-U0WN_KcAl8",
 AUTO_READ_STATUS: process.env.AUTO_READ_STATUS || "true",
 MODE: process.env.MODE || "public",
 AUTO_VOICE: process.env.AUTO_VOICE || "false",
