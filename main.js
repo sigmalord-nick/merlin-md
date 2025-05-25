@@ -1,3 +1,4 @@
+require('dotenv').config();
 const { default: makeWASocket, useSingleFileAuthState, DisconnectReason } = require('@adiwajshing/baileys');
 const { Boom } = require('@hapi/boom');
 const fs = require('fs');
