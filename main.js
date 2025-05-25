@@ -1,45 +1,44 @@
-const { default: makeWASocket, useMultiFileAuthState, makeWALegacySocket, fetchLatestBaileysVersion, useSingleFileAuthState } = require('@whiskeysockets/baileys');
-const { delay } = require('@whiskeysockets/baileys/lib/Utils');
-const P = require('pino');
+const { default: makeWASocket, useSingleFileAuthState, DisconnectReason } = require('@adiwajshing/baileys');
+const { Boom } = require('@hapi/boom');
+const fs = require('fs');
+const { SESSION_ID } = require('./config');
 
-async function startMerlinBot() {
-    const { state, saveCreds } = await useMultiFileAuthState('auth_info_baileys');
-    const { version } = await fetchLatestBaileysVersion();
+// Path for Baileys single-file session
+const SESSION_FILE_PATH = './session.json';
+const { state, saveState } = useSingleFileAuthState(SESSION_FILE_PATH);
 
-    const sock = makeWASocket({
-        version,
-        auth: state,
-        printQRInTerminal: false,
-        logger: P({ level: 'info' }),
-        browser: ['MerlinBot', 'Safari', '1.0.0'],
-    });
-
-    sock.ev.on('creds.update', saveCreds);
-
-    sock.ev.on('connection.update', async (update) => {
-        const { connection, lastDisconnect, pairingCode } = update;
-
-        if (pairingCode) {
-            console.log(`\nPair this device with WhatsApp using the code: ${pairingCode}\n`);
-        }
-
-        if (connection === 'close') {
-            const shouldReconnect = lastDisconnect?.error?.output?.statusCode !== 401;
-            console.log('Connection closed. Reconnecting...', shouldReconnect);
-            if (shouldReconnect) {
-                await delay(2000);
-                startMerlinBot();
-            }
-        } else if (connection === 'open') {
-            console.log('Merlin bot connected using pairing code!');
-        }
-    });
-
-    sock.ev.on('messages.upsert', async ({ messages }) => {
-        const msg = messages[0];
-        if (!msg.message) return;
-        console.log("Received a message from:", msg.key.remoteJid);
-    });
+// If session.json doesn't exist and SESSION_ID is provided, create the file
+if (!fs.existsSync(SESSION_FILE_PATH) && SESSION_ID) {
+    try {
+        const decoded = Buffer.from(SESSION_ID, 'base64').toString('utf-8');
+        fs.writeFileSync(SESSION_FILE_PATH, decoded);
+        console.log('Session file created from SESSION_ID');
+    } catch (e) {
+        console.error('Failed to decode or write session:', e);
+    }
 }
 
-startMerlinBot();
+async function startMerlin() {
+    const sock = makeWASocket({
+        auth: state,
+        printQRInTerminal: false,
+        browser: ['MerlinBot', 'Safari', '1.0.0']
+    });
+
+    sock.ev.on('creds.update', saveState);
+
+    sock.ev.on('connection.update', (update) => {
+        const { connection, lastDisconnect } = update;
+        if (connection === 'close') {
+            const reason = new Boom(lastDisconnect?.error)?.output?.statusCode;
+            console.log('Connection closed. Reason:', reason);
+        } else if (connection === 'open') {
+            console.log('Merlin MD connected to WhatsApp!');
+        }
+    });
+
+    // Your plugin loader or commands can go here
+    // require('./plugins')(sock) etc.
+}
+
+startMerlin();
